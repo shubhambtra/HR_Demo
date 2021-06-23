@@ -1,0 +1,12 @@
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\bin\Debug\netcoreapp3.1\Core.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\bin\Debug\netcoreapp3.1\Core.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete

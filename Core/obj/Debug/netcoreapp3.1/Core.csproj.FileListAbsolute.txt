@@ -1,0 +1,9 @@
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\bin\Debug\netcoreapp3.1\Core.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\bin\Debug\netcoreapp3.1\Core.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache

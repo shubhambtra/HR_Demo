@@ -1,0 +1,14 @@
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\bin\Debug\netcoreapp3.1\BLL.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\bin\Debug\netcoreapp3.1\Core.dll
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\bin\Debug\netcoreapp3.1\BLL.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\bin\Debug\netcoreapp3.1\Core.pdb
+F:\HR_Demo_Entity_Framework\HR_Demo\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
