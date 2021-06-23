@@ -10,3 +10,15 @@ F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
 F:\HR_Demo_Entity_Framework\HR_Demo\BLL\bin\Debug\netcoreapp3.1\Core.dll
 F:\HR_Demo_Entity_Framework\HR_Demo\BLL\bin\Debug\netcoreapp3.1\Core.pdb
 F:\HR_Demo_Entity_Framework\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+F:\Hr_Demo_EF\HR_Demo\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+F:\Hr_Demo_EF\HR_Demo\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+F:\Hr_Demo_EF\HR_Demo\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+F:\Hr_Demo_EF\HR_Demo\BLL\bin\Debug\netcoreapp3.1\Core.dll
+F:\Hr_Demo_EF\HR_Demo\BLL\bin\Debug\netcoreapp3.1\Core.pdb
+F:\Hr_Demo_EF\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+F:\Hr_Demo_EF\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+F:\Hr_Demo_EF\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+F:\Hr_Demo_EF\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+F:\Hr_Demo_EF\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+F:\Hr_Demo_EF\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+F:\Hr_Demo_EF\HR_Demo\BLL\obj\Debug\netcoreapp3.1\BLL.pdb

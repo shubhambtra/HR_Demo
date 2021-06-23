@@ -7,3 +7,12 @@ F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.csproj.Cor
 F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.dll
 F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.pdb
 F:\HR_Demo_Entity_Framework\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
+F:\Hr_Demo_EF\HR_Demo\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+F:\Hr_Demo_EF\HR_Demo\Core\bin\Debug\netcoreapp3.1\Core.dll
+F:\Hr_Demo_EF\HR_Demo\Core\bin\Debug\netcoreapp3.1\Core.pdb
+F:\Hr_Demo_EF\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
+F:\Hr_Demo_EF\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+F:\Hr_Demo_EF\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+F:\Hr_Demo_EF\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+F:\Hr_Demo_EF\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.dll
+F:\Hr_Demo_EF\HR_Demo\Core\obj\Debug\netcoreapp3.1\Core.pdb

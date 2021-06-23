@@ -5727,11 +5727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\HR_Demo_Entity_Framework\\HR_Demo\\BLL\\BLL.csproj",
+      "projectUniqueName": "F:\\Hr_Demo_EF\\HR_Demo\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "F:\\HR_Demo_Entity_Framework\\HR_Demo\\BLL\\BLL.csproj",
+      "projectPath": "F:\\Hr_Demo_EF\\HR_Demo\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\Shubham Saini\\.nuget\\packages\\",
-      "outputPath": "F:\\HR_Demo_Entity_Framework\\HR_Demo\\BLL\\obj\\",
+      "outputPath": "F:\\Hr_Demo_EF\\HR_Demo\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -5753,8 +5753,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\HR_Demo_Entity_Framework\\HR_Demo\\Core\\Core.csproj": {
-              "projectPath": "F:\\HR_Demo_Entity_Framework\\HR_Demo\\Core\\Core.csproj"
+            "F:\\Hr_Demo_EF\\HR_Demo\\Core\\Core.csproj": {
+              "projectPath": "F:\\Hr_Demo_EF\\HR_Demo\\Core\\Core.csproj"
             }
           }
         }
