@@ -35,8 +35,8 @@ namespace Core.Entitites
             modelBuilder.Entity<EmployeeSalary>(entity =>
             {
                 entity.Property(e => e.EMP_ID).HasColumnName("EMP_ID");
-
-           
+                entity.HasKey(e => e.SEQ_ID);
+                
                 entity.Property(e => e.ALLOWANCE_ID).HasColumnName("ALLOWANCE_ID");
 
                 entity.HasOne(d => d.Allowance)
@@ -47,6 +47,7 @@ namespace Core.Entitites
                    .WithMany(p => p.EmployeeSalary)
                    .HasForeignKey(d => d.EMP_ID)
                    .HasConstraintName("FK_EMPLOYEE_SALARY_EMPLOYEE");
+                entity.ToTable("Employee_Salary");
             });
             modelBuilder.Entity<Allowance>(entity =>
             {
@@ -56,10 +57,7 @@ namespace Core.Entitites
             {
                 entity.HasKey(e => e.SEQ_ID);
             });
-            modelBuilder.Entity<EmployeeSalary>(entity =>
-            {
-                entity.HasKey(e => e.SEQ_ID);
-            });
+            
         }
            
     }

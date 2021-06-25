@@ -16,7 +16,9 @@ namespace HR_DEMO
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
            
             services.AddScoped<IEmployeeService, EmployeeService>();
-           
+            services.AddScoped<IAllowanceService, AllowanceService>();
+            services.AddScoped<IAllowanceRepository, AllowanceRepository>();
+
         }
     }
 }

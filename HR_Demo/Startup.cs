@@ -27,6 +27,15 @@ namespace HR_DEMO
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+                mc.AddProfile(new Mappings());
+            });
+            var mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            IMvcBuilder builder = services.AddRazorPages();
+            builder.AddRazorRuntimeCompilation();
             services.AddControllersWithViews();
            
             services.AddDbContext<HrDemoDbContext>(options =>
