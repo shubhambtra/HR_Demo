@@ -36,13 +36,15 @@ namespace HR_DEMO
             services.AddSingleton(mapper);
             IMvcBuilder builder = services.AddRazorPages();
             builder.AddRazorRuntimeCompilation();
-            services.AddControllersWithViews();
+          //  services.AddControllersWithViews();
            
             services.AddDbContext<HrDemoDbContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("Connection")));
 
             services.RegisterAllTypes();
+            services
+    .AddRazorPages();
 
         }
 
@@ -65,13 +67,22 @@ namespace HR_DEMO
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
 
+                endpoints.MapControllerRoute(
+                 name: "static",
+                 pattern: "/Reports/Static/{*viewPath}",
+                 defaults: new { page = "/Order", action = "OnGet" });
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

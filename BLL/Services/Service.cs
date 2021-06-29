@@ -22,7 +22,10 @@ namespace BLL.Services
         {
             return await _repository.GetAll(include, wherePredicate);
         }
-
+        public async Task<TEntity> GetById1(string id)
+        {
+            return await _repository.GetById(id);
+        }
         public async Task<TEntity> GetById(int id)
         {
             return await _repository.GetById(id);

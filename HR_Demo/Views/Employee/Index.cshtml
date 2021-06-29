@@ -1,9 +1,6 @@
 ﻿@model EmployeeViewModel
 @using Newtonsoft.Json 
 
-@{
-    ViewData["Title"] = "Home Page";
-}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -17,12 +14,13 @@
 <form asp-action="Save" asp-controller="Employee" data-ajax="true">
     <div class="row">
         <div class="col-md-12">
-            <label style="margin-bottom: 25px; margin-top: 15px; padding-right: 20px; " >Employee Number</label>
+            <label style="margin-bottom: 25px; margin-top: 15px; padding-right: 20px; ">Employee Number</label>
             <input type="text" asp-for="EMP_ID" id="EmployeeNo" />
             <label style="padding-right: 15px; padding-left: 5px;">Name</label>
             <input type="text" asp-for="EMP_NAME" id="Name" />
             <label style="padding-right: 15px; padding-left: 5px;">Date Of Birth</label>
             <input type="text" asp-for="DOB" autocomplete="off" id="DOB" />
+        
         </div>
 
     </div>
@@ -107,6 +105,8 @@
     }
     var Validate = function (elem) {
         debugger;
+      
+     
         var minvalue = parseInt($(elem).parents('tr').find('.minValue').html());
         var maxvalue = parseInt($(elem).parents('tr').find('.maxValue').html());
         var value = $(elem).val();

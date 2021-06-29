@@ -17,7 +17,7 @@ namespace BLL.Services.Interfaces
         Task<TEntity> GetById(int id);
 
         Task<TEntity> GetById(string id);
-
+       
         Task<TEntity> GetById(Expression<Func<TEntity, bool>> match,
             Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include);
 

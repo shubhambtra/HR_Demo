@@ -485,3 +485,5 @@ F:\Hr_Demo_EF\HR_Demo\HR_DEMO\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.
 F:\Hr_Demo_EF\HR_Demo\HR_DEMO\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\Hr_Demo_EF\HR_Demo\HR_DEMO\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\Hr_Demo_EF\HR_Demo\HR_DEMO\obj\Debug\netcoreapp3.1\HR_DEMO.MvcApplicationPartsAssemblyInfo.cs
+F:\Hr_Demo_EF\HR_Demo\HR_DEMO\obj\Debug\netcoreapp3.1\Razor\Views\Test\Index1.cshtml.g.cs
+F:\Hr_Demo_EF\HR_Demo\HR_DEMO\obj\Debug\netcoreapp3.1\Razor\Pages\Order.cshtml.g.cs

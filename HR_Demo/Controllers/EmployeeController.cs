@@ -39,7 +39,7 @@ namespace HR_DEMO.Controllers
                 {
                     return RedirectToAction("Index");
                 }
-
+            
 
                 model.EmployeeSalary = model.EmployeeSalary.Where(x => x.ALLOWANCE_AMT != 0).ToList();
                 var entity = _mapper.Map<EmployeeViewModel, Employee>(model);
@@ -53,6 +53,8 @@ namespace HR_DEMO.Controllers
         }
         private async Task<IEnumerable<AllowanceViewModel>> GetSalaryList()
         {
+
+
             return _mapper.Map<IEnumerable<Allowance>, IEnumerable<AllowanceViewModel>>(await _allowanceService.GetAll());
         }
     }

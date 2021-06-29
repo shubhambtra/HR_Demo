@@ -1,0 +1,234 @@
+﻿@page "/Order"
+@model HR_DEMO.Pages.OrderModel
+@{
+}
+@using Newtonsoft.Json
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <label style="margin-bottom: 25px; margin-top: 15px; padding-right: 20px; ">Employee Number</label>
+            <input type="text" asp-for="EmployeeDetail.EMP_ID" id="EmployeeNo" />
+            <label style="padding-right: 15px; padding-left: 5px;">Name</label>
+            <input type="text" asp-for="EmployeeDetail.EMP_NAME" id="Name" />
+            <label style="padding-right: 15px; padding-left: 5px;">Date Of Birth</label>
+            <input type="text" asp-for="EmployeeDetail.DOB" autocomplete="off" id="DOB" />
+
+        </div>
+
+    </div>
+    <div>
+        <table id="allownanceAdd" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Value</th>
+                    <th></th>
+                </tr>
+
+            </thead>
+            <tbody class="listbody">
+                <tr>
+                    <td class="td">
+                        @Html.DropDownList("Allowance", new SelectList(Model.EmployeeDetail.Allowance, "SEQID", "ALLOWANCE_NAME"), null, new { @id = "ddlAllowanceType", @onchange = "SetMinMax(this)", @class = "form-control" })
+
+                    </td>
+                    <td class="minValue"></td>
+                    <td class="maxValue"></td>
+                    <td>
+                        <input onblur="Validate(this)" id="AddedAmount"  value="0" />
+                    </td>
+                    <td>
+                        <input type="button" class="btn btn-primary" onclick="AddRow()" id="Add" value="Add" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="allownance" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Value</th>
+                </tr>
+
+            </thead>
+            <tbody class="listbodyfinal">
+                @*@foreach (var item in Model.EmployeeDetail.Allowance)
+                    {
+                        <tr>
+                            <td class="td_@Model.EmployeeDetail.Allowance.IndexOf(item)">
+                                <span class="allowanceName"> @item.ALLOWANCE_NAME </span><button type="button" class="btn btn-primary" style=" float: right;" data-toggle="modal" onclick="$('#ddlAllowance').val('@item.SEQID'); $('#ddlAllowance').multiselect('refresh');$('#hdnActiveDiv').val('td_@Model.EmployeeDetail.Allowance.IndexOf(item)')" data-target="#exampleModalCenter">
+                                    ...
+                                </button>
+                                <input type="hidden" value="@item.SEQID" name="EmployeeDetail.EmployeeSalary[@Model.EmployeeDetail.Allowance.IndexOf(item)].ALLOWANCE_ID" />
+                            </td>
+                            <td class="minValue">@item.MIN_VALUE</td>
+                            <td class="maxValue">@item.MAX_VALUE</td>
+                            <td>
+                                <input onblur="Validate(this)" class="allowance_AMT" value="0" name="EmployeeDetail.EmployeeSalary[@Model.EmployeeDetail.Allowance.IndexOf(item)].ALLOWANCE_AMT" />
+                            </td>
+                        </tr>
+                    }*@
+
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" name="Save" class="btn btn-primary" onclick="return ValidateValues()" id="Save" value="Save">
+    <input type="hidden" id="hdnActiveDiv" />
+
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Allowance</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Html.DropDownList("Allowance", new SelectList(Model.EmployeeDetail.Allowance, "SEQID", "ALLOWANCE_NAME"), null, new { @id = "ddlAllowance" })
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" onclick="Save()" data-dismiss="modal" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+
+        localStorage.setItem('allowances','@Html.Raw(JsonConvert.SerializeObject(Model.EmployeeDetail.Allowance))')
+        //$("#ddlAllowance").multiselect({
+        //    includeSelectAllOption: true,
+        //    enableFiltering: true
+        //});
+        $('#DOB').datepicker();
+        $('#ddlAllowanceType').change();
+
+    })
+    var Save = function () {
+        if ($('#ddlAllowance').val() != "" && $('#ddlAllowance').val() != "0") {
+            $("." + $('#hdnActiveDiv').val()).find('input[type=hidden]').val($($('#ddlAllowance option:selected')[0]).val());
+            $("." + $('#hdnActiveDiv').val()).find('.allowanceName').html($($('#ddlAllowance option:selected')[0]).text());
+            var allowances = JSON.parse( localStorage.getItem("allowances"));
+            var selectedAllowance = allowances.filter(x => x.SEQID == $($('#ddlAllowance option:selected')[0]).val())[0];
+            $("." + $('#hdnActiveDiv').val()).parent().find('.minValue').html(selectedAllowance.MIN_VALUE);
+            $("." + $('#hdnActiveDiv').val()).parent().find('.maxValue').html(selectedAllowance.MAX_VALUE);
+        }
+
+    }
+    var SetMinMax = function (elem) {
+        debugger;
+        if ($(elem).val() != "" && $(elem).val() != "0") {
+
+            var allowances = JSON.parse(localStorage.getItem("allowances"));
+            var selectedAllowance = allowances.filter(x => x.SEQID == $($(elem).find('option:selected')[0]).val())[0];
+            $(elem).parent().parent().find('.minValue').html(selectedAllowance.MIN_VALUE);
+            $(elem).parent().parent().find('.maxValue').html(selectedAllowance.MAX_VALUE);
+        }
+    }
+    var AddRow = function () {
+        if ($('#AddedAmount').val() == "" || $('#AddedAmount').val() == "0") {
+            alert("Please enter the value")
+            return false;
+        }
+        var allowances = JSON.parse(localStorage.getItem("allowances"));
+        var options = "";
+        $.each(allowances, function (index, elem) {
+            if ($($('#ddlAllowanceType option:selected')[0]).val() == elem.SEQID) {
+                options += "<option selected value='" + elem.SEQID + "'>" + elem.ALLOWANCE_NAME + "</option>";
+            }
+            else {
+                options += "<option value='" + elem.SEQID + "'>" + elem.ALLOWANCE_NAME + "</option>";
+            }
+        })
+
+        var ddlAllowance = "<select onchange='SetMinMax(this)' class='form-control' >" +
+            options
+            + "</select>";
+         var html='<tr>\
+                        <td>\
+                   '+ ddlAllowance+'\
+                            <input type="hidden" value="'+ $($('#ddlAllowanceType option:selected')[0]).val()+'"  class="Seq_Id" />\
+                        </td>\
+                        <td class="minValue">'+ $('#allownanceAdd').find('.minValue').html()+'</td>\
+                        <td class="maxValue">'+ $('#allownanceAdd').find('.maxValue').html()+'</td>\
+                        <td>\
+                            <input type="text" onblur="Validate(this)" value="'+ $('#AddedAmount').val()+'"/>\
+        <input type="hidden" class="Allownce_Amt" value="'+ $('#AddedAmount').val()+'">\
+                        </td>\
+         <td>\
+                           <input type ="button" id ="sb"value="Create Account"/>\
+                        </td>\
+                    </tr>';
+        $('.listbodyfinal').append(html);
+        $('#AddedAmount').val('');
+
+    }
+    var Validate = function (elem) {
+        var minvalue = parseInt($(elem).parents('tr').find('.minValue').html());
+        var maxvalue = parseInt($(elem).parents('tr').find('.maxValue').html());
+        var value = $(elem).val();
+        if (value != "" && value != "0" && (parseInt(value) < minvalue || parseInt(value) > maxvalue)){
+            alert("Value must be in range" + minvalue + "-" + maxvalue);
+            return false;
+        }
+        if (value == "") {
+            $(elem).val('0');
+        }
+    }
+    var ValidateValues = function () {
+        var valid = true;
+        $('.allowance_AMT').each(function (index,elem) {
+            var minvalue = parseInt($(elem).parents('tr').find('.minValue').html());
+            var maxvalue = parseInt($(elem).parents('tr').find('.maxValue').html());
+            var value = $(elem).val();
+            if (value != "" && value != "0" && (parseInt(value) < minvalue || parseInt(value) > maxvalue)){
+                alert("Value must be in range");
+                valid = false;
+            }
+        })
+        if ($('#EmployeeNo').val() == "") {
+            alert("Enter Employee Number!");
+            valid = false;
+        }
+        else if ($('#Name').val() == "") {
+            alert("Enter Employee Name!");
+            valid = false;
+        }
+        else if ($('#DOB').val() == "") {
+            alert("Select Date of Birth!");
+            valid = false;
+        }
+        if (!valid)
+            return false;
+        SetIndex();
+    }
+
+    var SetIndex = function () {
+        $('.listbodyfinal tr').each(function (index, elem) {
+            $($(elem).find('select')[0]).attr("name", "EmployeeDetail.EmployeeSalary[" + index + "].ALLOWANCE_ID");
+            $($(elem).find('input[type=text]')[0]).attr("name", "EmployeeDetail.EmployeeSalary[" + index + "].ALLOWANCE_AMT");
+        })
+    }
+</script>
