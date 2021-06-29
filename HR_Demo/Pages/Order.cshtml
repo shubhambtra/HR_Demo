@@ -48,7 +48,7 @@
                     <td class="minValue"></td>
                     <td class="maxValue"></td>
                     <td>
-                        <input onblur="Validate(this)" id="AddedAmount"  value="0" />
+                        <input onblur="Validate(this)" id="AddedAmount" value="0" />
                     </td>
                     <td>
                         <input type="button" class="btn btn-primary" onclick="AddRow()" id="Add" value="Add" />
@@ -175,10 +175,10 @@
                         <td class="maxValue">'+ $('#allownanceAdd').find('.maxValue').html()+'</td>\
                         <td>\
                             <input type="text" onblur="Validate(this)" value="'+ $('#AddedAmount').val()+'"/>\
-        <input type="hidden" class="Allownce_Amt" value="'+ $('#AddedAmount').val()+'">\
+                            <input type="hidden" class="Allownce_Amt" value="'+ $('#AddedAmount').val()+'">\
                         </td>\
-         <td>\
-                           <input type ="button" id ="sb"value="Create Account"/>\
+                        <td>\
+                           <input type ="button"  class="delete" name="delete" value="Remove"/>\
                         </td>\
                     </tr>';
         $('.listbodyfinal').append(html);
@@ -231,4 +231,9 @@
             $($(elem).find('input[type=text]')[0]).attr("name", "EmployeeDetail.EmployeeSalary[" + index + "].ALLOWANCE_AMT");
         })
     }
+
+    $(document).on("click", '.delete', function () {
+        debugger;
+        $(this).closest('tr').remove();
+    });
 </script>
